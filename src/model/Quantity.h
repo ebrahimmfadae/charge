@@ -1,15 +1,14 @@
 #ifndef QUANTITY_H_
 #define QUANTITY_H_
 
-class Quantity {
+class Quantity
+{
+
 public:
-    Quantity() {
-    };
-
-    virtual ~Quantity() {
-    };
-
-    virtual double getWeight() {
+    Quantity(){};
+    virtual ~Quantity(){};
+    virtual double getWeight()
+    {
         return 0;
     };
 };

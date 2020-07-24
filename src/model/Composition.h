@@ -5,20 +5,16 @@
 
 using namespace std;
 
-class Composition {
+class Composition
+{
+
 public:
     Composition();
-
     Composition(string, double);
-
     double getPercentage();
-
     void setPercentage(double);
-
     string getSymbol();
-
     void setSymbol(string);
-
     string toString();
 
 private:

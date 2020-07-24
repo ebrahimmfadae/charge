@@ -5,20 +5,16 @@
 
 using namespace std;
 
-class Standard {
+class Standard
+{
+
 public:
     Standard();
-
     double getMin();
-
     void setMin(double);
-
     double getMax();
-
     void setMax(double);
-
     string *getSymbols();
-
     void setSymbols(string *);
 
 private:

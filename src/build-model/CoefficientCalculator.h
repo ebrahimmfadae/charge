@@ -4,18 +4,15 @@
 #include "model/Alloymaker.h"
 #include "model/Standard.h"
 
-class CoefficientCalculator {
+class CoefficientCalculator
+{
+
 public:
     CoefficientCalculator(Alloymaker &);
-
     void setAlloymaker(Alloymaker &);
-
     double composition();
-
     double compositionVarAmount(double);
-
     double amount();
-
     double capacity();
 
 private:

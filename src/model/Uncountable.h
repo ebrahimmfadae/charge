@@ -3,12 +3,12 @@
 
 #include "Quantity.h"
 
-class Uncountable : public Quantity {
+class Uncountable : public Quantity
+{
+
 public:
     Uncountable();
-
     void setWeight(double);
-
     double getWeight();
 
 private:

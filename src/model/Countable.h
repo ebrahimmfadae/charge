@@ -3,18 +3,15 @@
 
 #include "Quantity.h"
 
-class Countable : public Quantity {
+class Countable : public Quantity
+{
+
 public:
     Countable();
-
     int getCount();
-
     void setCount(int);
-
     double getUnitWeight();
-
     void setUnitWeight(double);
-
     double getWeight();
 
 private:

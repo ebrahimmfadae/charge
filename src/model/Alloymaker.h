@@ -7,26 +7,19 @@
 
 using namespace std;
 
-class Alloymaker {
+class Alloymaker
+{
+
 public:
     Alloymaker();
-
     CompositionCollection &getCompositions();
-
     Quantity &getQuantity();
-
     void setQuantity(Quantity &);
-
     double getPertPercentage();
-
     void setPertPercentage(double);
-
     int getPrice();
-
     void setPrice(int);
-
     string getName();
-
     void setName(string);
 
 private:

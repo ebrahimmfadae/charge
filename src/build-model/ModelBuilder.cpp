@@ -1,29 +1,36 @@
 #include "ModelBuilder.h"
 
-ModelBuilder::ModelBuilder() {
+ModelBuilder::ModelBuilder()
+{
     ModelBuilder::alloymakers = new Alloymaker[0];
 }
 
-double *ModelBuilder::compositionVarAmount(Standard *std) {
+double *ModelBuilder::compositionVarAmount(Standard *std)
+{
     return 0;
 }
 
-double *ModelBuilder::composition(Standard *std) {
+double *ModelBuilder::composition(Standard *std)
+{
     return 0;
 }
 
-double *ModelBuilder::amount() {
+double *ModelBuilder::amount()
+{
     return 0;
 }
 
-double *ModelBuilder::capacity() {
+double *ModelBuilder::capacity()
+{
     return 0;
 }
 
-Alloymaker *ModelBuilder::getAlloymakers() {
+Alloymaker *ModelBuilder::getAlloymakers()
+{
     return ModelBuilder::alloymakers;
 }
 
-void ModelBuilder::setAlloymakers(Alloymaker *value) {
+void ModelBuilder::setAlloymakers(Alloymaker *value)
+{
     ModelBuilder::alloymakers = value;
 }
