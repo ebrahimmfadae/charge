@@ -1,8 +1,8 @@
 #ifndef COEFFICIENT_H_
 #define COEFFICIENT_H_
 
-#include "model/Alloymaker.h"
-#include "model/Standard.h"
+#include "models/Alloymaker.h"
+#include "models/Standard.h"
 
 class CoefficientCalculator
 {

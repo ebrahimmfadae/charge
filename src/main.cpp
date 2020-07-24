@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "model/Alloymaker.h"
+#include "models/Alloymaker.h"
 
 using namespace std;
 

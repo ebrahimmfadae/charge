@@ -27,7 +27,7 @@ private:
     string name;
     double pertPercentage;
     int price;
-    Quantity *quantity;
+    Quantity &quantity;
 };
 
 #endif /* ALLOYMAKER_H_ */

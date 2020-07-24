@@ -6,7 +6,6 @@ class Quantity
 
 public:
     Quantity(){};
-    virtual ~Quantity(){};
     virtual double getWeight()
     {
         return 0;

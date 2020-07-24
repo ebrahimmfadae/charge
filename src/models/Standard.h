@@ -15,10 +15,10 @@ public:
     double getMax();
     void setMax(double);
     string *getSymbols();
-    void setSymbols(string *);
+    void setSymbols(string[]);
 
 private:
-    string *symbols;
+    string symbols[];
     double min;
     double max;
 };
