@@ -2,15 +2,15 @@
 
 Uncountable::Uncountable()
 {
-    Uncountable::weight = 0;
+    weight = 0;
 }
 
 double Uncountable::getWeight()
 {
-    return Uncountable::weight;
+    return weight;
 }
 
 void Uncountable::setWeight(double value)
 {
-    Uncountable::weight = value;
+    weight = value;
 }

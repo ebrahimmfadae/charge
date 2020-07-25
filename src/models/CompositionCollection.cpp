@@ -2,9 +2,9 @@
 
 CompositionCollection::CompositionCollection()
 {
-    CompositionCollection::baseElement = "Fe";
-    CompositionCollection::get(0).setSymbol("C");
-    CompositionCollection::get(1).setSymbol("Si");
+    baseElement = "Fe";
+    get(0).setSymbol("C");
+    get(1).setSymbol("Si");
 }
 
 Composition CompositionCollection::getBase()
@@ -14,25 +14,25 @@ Composition CompositionCollection::getBase()
 
     for (int i = 0; i < length; i++)
     {
-        percentage += CompositionCollection::get(i).getPercentage();
+        percentage += get(i).getPercentage();
     }
 
-    return Composition(CompositionCollection::baseElement, 100 - percentage);
+    return Composition(baseElement, 100 - percentage);
 }
 
 Composition &CompositionCollection::get(int index)
 {
-    return CompositionCollection::array[index];
+    return array[index];
 }
 
 void CompositionCollection::set(int index, Composition cmp)
 {
-    *(CompositionCollection::array + index) = cmp;
+    *(array + index) = cmp;
 }
 
 void CompositionCollection::setBase(int index)
 {
-    Composition cmp = CompositionCollection::get(index);
-    CompositionCollection::set(index, CompositionCollection::getBase());
-    CompositionCollection::baseElement = cmp.getSymbol();
+    Composition cmp = get(index);
+    set(index, getBase());
+    baseElement = cmp.getSymbol();
 }

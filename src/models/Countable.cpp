@@ -2,26 +2,26 @@
 
 Countable::Countable()
 {
-    Countable::count = 0;
-    Countable::unitWeight = 0;
+    count = 0;
+    unitWeight = 0;
 }
 
 double Countable::getWeight()
 {
-    return Countable::count * Countable::unitWeight;
+    return count * unitWeight;
 }
 
 void Countable::setCount(int value)
 {
-    Countable::count = value;
+    count = value;
 }
 
 double Countable::getUnitWeight()
 {
-    return Countable::unitWeight;
+    return unitWeight;
 }
 
 void Countable::setUnitWeight(double value)
 {
-    Countable::unitWeight = value;
+    unitWeight = value;
 }

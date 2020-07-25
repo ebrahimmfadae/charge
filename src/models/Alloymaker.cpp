@@ -6,53 +6,53 @@ using namespace std;
 
 Alloymaker::Alloymaker() : quantity(*new Uncountable())
 {
-    Alloymaker::name = "";
-    Alloymaker::price = 0;
-    Alloymaker::pertPercentage = 0;
-    Alloymaker::compositions = CompositionCollection();
+    name = "";
+    price = 0;
+    pertPercentage = 0;
+    compositions = CompositionCollection();
 }
 
 string Alloymaker::getName()
 {
-    return Alloymaker::name;
+    return name;
 }
 
 void Alloymaker::setName(string value)
 {
-    Alloymaker::name = value;
+    name = value;
 }
 
 CompositionCollection &Alloymaker::getCompositions()
 {
-    return Alloymaker::compositions;
+    return compositions;
 }
 
 Quantity &Alloymaker::getQuantity()
 {
-    return Alloymaker::quantity;
+    return quantity;
 }
 
 void Alloymaker::setQuantity(Quantity &value)
 {
-    Alloymaker::quantity = value;
+    quantity = value;
 }
 
 double Alloymaker::getPertPercentage()
 {
-    return Alloymaker::pertPercentage;
+    return pertPercentage;
 }
 
 void Alloymaker::setPertPercentage(double value)
 {
-    Alloymaker::pertPercentage = value;
+    pertPercentage = value;
 }
 
 int Alloymaker::getPrice()
 {
-    return Alloymaker::price;
+    return price;
 }
 
 void Alloymaker::setPrice(int value)
 {
-    Alloymaker::price = value;
+    price = value;
 }

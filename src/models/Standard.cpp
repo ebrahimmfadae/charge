@@ -2,37 +2,37 @@
 
 Standard::Standard()
 {
-    Standard::symbols = new string[0];
-    Standard::min = 0;
-    Standard::max = 0;
+    symbols = new string[0];
+    min = 0;
+    max = 0;
 }
 
 double Standard::getMin()
 {
-    return Standard::min;
+    return min;
 }
 
 void Standard::setMin(double value)
 {
-    Standard::min = value;
+    min = value;
 }
 
 double Standard::getMax()
 {
-    return Standard::max;
+    return max;
 }
 
 void Standard::setMax(double value)
 {
-    Standard::max = value;
+    max = value;
 }
 
 string *Standard::getSymbols()
 {
-    return Standard::symbols;
+    return symbols;
 }
 
 void Standard::setSymbols(string value[])
 {
-    Standard::symbols = value;
+    symbols = value;
 }
