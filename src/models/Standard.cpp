@@ -32,7 +32,7 @@ string *Standard::getSymbols()
     return Standard::symbols;
 }
 
-void Standard::setSymbols(string *value)
+void Standard::setSymbols(string value[])
 {
     Standard::symbols = value;
 }

@@ -18,7 +18,7 @@ public:
     void setSymbols(string[]);
 
 private:
-    string symbols[];
+    string *symbols;
     double min;
     double max;
 };
