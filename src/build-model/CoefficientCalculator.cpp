@@ -2,12 +2,17 @@
 
 CoefficientCalculator::CoefficientCalculator(Alloymaker &alloymaker)
 {
-    CoefficientCalculator::alloymaker = &alloymaker;
+    setAlloymaker(alloymaker);
 }
 
 void CoefficientCalculator::setAlloymaker(Alloymaker &value)
 {
-    CoefficientCalculator::alloymaker = &value;
+    CoefficientCalculator::alloymaker = value;
+}
+
+Alloymaker &CoefficientCalculator::getAlloymaker()
+{
+    return alloymaker;
 }
 
 double CoefficientCalculator::composition()

@@ -10,13 +10,14 @@ class CoefficientCalculator
 public:
     CoefficientCalculator(Alloymaker &);
     void setAlloymaker(Alloymaker &);
+    Alloymaker &getAlloymaker();
     double composition();
     double compositionVarAmount(double);
     double amount();
     double capacity();
 
 private:
-    Alloymaker *alloymaker;
+    Alloymaker &alloymaker;
 };
 
 #endif /* COEFFICIENT_H_ */

@@ -3,21 +3,22 @@
 
 #include "models/Alloymaker.h"
 #include "models/Standard.h"
+#include "vector"
 
 class ModelBuilder
 {
 
 public:
     ModelBuilder();
-    double *composition(Standard *std);
-    double *compositionVarAmount(Standard *std);
-    double *amount();
-    double *capacity();
-    Alloymaker *getAlloymakers();
-    void setAlloymakers(Alloymaker *);
+    double composition(Standard &);
+    double compositionVarAmount(Standard &);
+    double amount();
+    double capacity();
+    vector<Alloymaker> &getAlloymakers();
+    void setAlloymakers(vector<Alloymaker> &);
 
 private:
-    Alloymaker *alloymakers;
+    vector<Alloymaker> &alloymakers;
 };
 
 #endif /* ROWBUILDER_H_ */
