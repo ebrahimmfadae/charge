@@ -4,12 +4,13 @@
 
 using namespace std;
 
-Alloymaker::Alloymaker() : quantity(*new Uncountable())
+Alloymaker::Alloymaker()
 {
     name = "";
     price = 0;
     pertPercentage = 0;
-    compositions = CompositionCollection();
+    quantity = new Uncountable();
+    compositions = new CompositionCollection();
 }
 
 string Alloymaker::getName()
@@ -24,17 +25,17 @@ void Alloymaker::setName(string value)
 
 CompositionCollection &Alloymaker::getCompositions()
 {
-    return compositions;
+    return *compositions;
 }
 
 Quantity &Alloymaker::getQuantity()
 {
-    return quantity;
+    return *quantity;
 }
 
 void Alloymaker::setQuantity(Quantity &value)
 {
-    quantity = value;
+    quantity = &value;
 }
 
 double Alloymaker::getPertPercentage()

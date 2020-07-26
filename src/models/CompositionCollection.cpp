@@ -1,38 +1,33 @@
 #include "CompositionCollection.h"
 
-CompositionCollection::CompositionCollection()
+CompositionCollection::CompositionCollection() : CompositionCollection("Fe")
 {
-    baseElement = "Fe";
-    get(0).setSymbol("C");
-    get(1).setSymbol("Si");
 }
 
-Composition CompositionCollection::getBase()
+CompositionCollection::CompositionCollection(string baseElement) : baseElement(baseElement)
 {
-    double percentage = 0;
-    int length = 2;
-
-    for (int i = 0; i < length; i++)
-    {
-        percentage += get(i).getPercentage();
-    }
-
-    return Composition(baseElement, 100 - percentage);
+    array = new vector<Composition>{
+        Composition("Fe", 100, *this),
+        Composition("C", 0, *this),
+        Composition("Si", 0, *this)};
 }
 
 Composition &CompositionCollection::get(int index)
 {
-    return array[index];
+    return array->at(index);
 }
 
-void CompositionCollection::set(int index, Composition cmp)
+string CompositionCollection::getBaseElement()
 {
-    *(array + index) = cmp;
+    return baseElement;
 }
 
-void CompositionCollection::setBase(int index)
+void CompositionCollection::setBaseElement(string symbol)
 {
-    Composition cmp = get(index);
-    set(index, getBase());
-    baseElement = cmp.getSymbol();
+    baseElement = symbol;
+}
+
+int CompositionCollection::size()
+{
+    return array->size();
 }

@@ -17,7 +17,7 @@ public:
     double capacity();
 
 private:
-    Alloymaker &alloymaker;
+    Alloymaker *alloymaker;
 };
 
 #endif /* COEFFICIENT_H_ */

@@ -18,7 +18,7 @@ public:
     void setAlloymakers(vector<Alloymaker> &);
 
 private:
-    vector<Alloymaker> &alloymakers;
+    vector<Alloymaker> *alloymakers;
 };
 
 #endif /* ROWBUILDER_H_ */

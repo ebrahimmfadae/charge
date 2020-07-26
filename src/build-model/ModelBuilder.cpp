@@ -1,8 +1,8 @@
 #include "ModelBuilder.h"
 
-ModelBuilder::ModelBuilder() : alloymakers(*new vector<Alloymaker>())
+ModelBuilder::ModelBuilder()
 {
-    
+    alloymakers = new vector<Alloymaker>();
 }
 
 double ModelBuilder::compositionVarAmount(Standard &std)
@@ -27,10 +27,10 @@ double ModelBuilder::capacity()
 
 vector<Alloymaker> &ModelBuilder::getAlloymakers()
 {
-    return ModelBuilder::alloymakers;
+    return *alloymakers;
 }
 
 void ModelBuilder::setAlloymakers(vector<Alloymaker> &value)
 {
-    ModelBuilder::alloymakers = value;
+    ModelBuilder::alloymakers = &value;
 }

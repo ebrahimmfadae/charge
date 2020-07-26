@@ -7,12 +7,12 @@ CoefficientCalculator::CoefficientCalculator(Alloymaker &alloymaker)
 
 void CoefficientCalculator::setAlloymaker(Alloymaker &value)
 {
-    CoefficientCalculator::alloymaker = value;
+    CoefficientCalculator::alloymaker = &value;
 }
 
 Alloymaker &CoefficientCalculator::getAlloymaker()
 {
-    return alloymaker;
+    return *alloymaker;
 }
 
 double CoefficientCalculator::composition()

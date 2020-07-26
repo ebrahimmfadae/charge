@@ -23,11 +23,11 @@ public:
     void setName(string);
 
 private:
-    CompositionCollection compositions;
+    CompositionCollection *compositions;
     string name;
     double pertPercentage;
     int price;
-    Quantity &quantity;
+    Quantity *quantity;
 };
 
 #endif /* ALLOYMAKER_H_ */
