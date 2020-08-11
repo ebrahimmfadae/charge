@@ -57,6 +57,6 @@ void Composition::setSymbol(string value)
 string Composition::toString()
 {
     ostringstream stream;
-    stream << symbol << " " << percentage << "\n";
+    stream << symbol << " " << percentage;
     return stream.str();
 }

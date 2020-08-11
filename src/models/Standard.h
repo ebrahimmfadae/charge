@@ -2,6 +2,7 @@
 #define STANDARD_H_
 
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -14,11 +15,11 @@ public:
     void setMin(double);
     double getMax();
     void setMax(double);
-    string *getSymbols();
-    void setSymbols(string[]);
+    vector<string> &getSymbols();
+    void setSymbols(vector<string>);
 
 private:
-    string *symbols;
+    vector<string> symbols;
     double min;
     double max;
 };

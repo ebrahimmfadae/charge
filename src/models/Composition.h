@@ -11,6 +11,7 @@ class CompositionCollection;
 
 class Composition
 {
+
 public:
     Composition(CompositionCollection &);
     Composition(string, double, CompositionCollection &);

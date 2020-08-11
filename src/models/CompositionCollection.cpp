@@ -17,6 +17,17 @@ Composition &CompositionCollection::get(int index)
     return array->at(index);
 }
 
+Composition &CompositionCollection::get(string s)
+{
+    for (size_t i = 0; i < array->size(); i++)
+    {
+        auto &cmp = array->at(i);
+        if (cmp.getSymbol() == s)
+            return array->at(i);
+    }
+    throw exception();
+}
+
 string CompositionCollection::getBaseElement()
 {
     return baseElement;

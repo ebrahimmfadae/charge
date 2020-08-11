@@ -2,7 +2,6 @@
 
 Standard::Standard()
 {
-    symbols = new string[0];
     min = 0;
     max = 0;
 }
@@ -27,12 +26,12 @@ void Standard::setMax(double value)
     max = value;
 }
 
-string *Standard::getSymbols()
+vector<string> &Standard::getSymbols()
 {
     return symbols;
 }
 
-void Standard::setSymbols(string value[])
+void Standard::setSymbols(vector<string> value)
 {
     symbols = value;
 }

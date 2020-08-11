@@ -12,10 +12,12 @@ class CompositionCollection;
 
 class CompositionCollection
 {
+
 public:
     CompositionCollection();
     CompositionCollection(string);
     Composition &get(int);
+    Composition &get(string);
     string getBaseElement();
     void setBaseElement(string);
     int size();

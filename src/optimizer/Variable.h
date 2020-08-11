@@ -1,18 +1,18 @@
-#ifndef COEFFICIENT_H_
-#define COEFFICIENT_H_
+#ifndef VARIABLE_H_
+#define VARIABLE_H_
 
 #include "models/Alloymaker.h"
 #include "models/Standard.h"
 
-class CoefficientCalculator
+class Variable
 {
 
 public:
-    CoefficientCalculator(Alloymaker &);
+    Variable(Alloymaker &);
     void setAlloymaker(Alloymaker &);
     Alloymaker &getAlloymaker();
-    double composition();
-    double compositionVarAmount(double);
+    double composition(Standard &std);
+    double goal();
     double amount();
     double capacity();
 
@@ -20,4 +20,4 @@ private:
     Alloymaker *alloymaker;
 };
 
-#endif /* COEFFICIENT_H_ */
+#endif /* VARIABLE_H_ */
