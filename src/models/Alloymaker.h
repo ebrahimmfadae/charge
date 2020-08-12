@@ -2,7 +2,7 @@
 #define ALLOYMAKER_H_
 
 #include <string>
-#include "CompositionCollection.h"
+#include "Composition.h"
 
 using namespace std;
 
@@ -11,7 +11,7 @@ class Alloymaker
 
 public:
     Alloymaker();
-    CompositionCollection &getCompositions();
+    Composition &getCompositions();
     double getUnitWeight();
     void setUnitWeight(double);
     double getWeight();
@@ -26,7 +26,7 @@ public:
     void setName(string);
 
 private:
-    CompositionCollection *compositions;
+    Composition *compositions;
     string name;
     double pertPercentage;
     double unitWeight;

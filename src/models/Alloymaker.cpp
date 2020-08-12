@@ -1,5 +1,5 @@
 #include "Alloymaker.h"
-#include "CompositionCollection.h"
+#include "Composition.h"
 
 using namespace std;
 
@@ -11,7 +11,7 @@ Alloymaker::Alloymaker()
     count = 0;
     unitWeight = 0;
     weight = 0;
-    compositions = new CompositionCollection();
+    compositions = new Composition();
 }
 
 string Alloymaker::getName()
@@ -24,7 +24,7 @@ void Alloymaker::setName(string value)
     name = value;
 }
 
-CompositionCollection &Alloymaker::getCompositions()
+Composition &Alloymaker::getCompositions()
 {
     return *compositions;
 }

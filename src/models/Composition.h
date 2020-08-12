@@ -2,29 +2,29 @@
 #define COMPOSITION_H_
 
 #include <string>
-#include "CompositionCollection.h"
+#include <vector>
+#include "Chemical.h"
 
 using namespace std;
 
+class Chemical;
 class Composition;
-class CompositionCollection;
 
 class Composition
 {
 
 public:
-    Composition(CompositionCollection &);
-    Composition(string, double, CompositionCollection &);
-    double getPercentage();
-    void setPercentage(double);
-    string getSymbol();
-    void setSymbol(string);
-    string toString();
+    Composition();
+    Composition(string);
+    Chemical &get(size_t);
+    Chemical &get(string);
+    string getBaseElement();
+    void setBaseElement(string);
+    size_t size();
 
 private:
-    CompositionCollection *compositions;
-    string symbol;
-    double percentage;
+    string baseElement;
+    vector<Chemical> *array;
 };
 
 #endif /* COMPOSITION_H_ */
