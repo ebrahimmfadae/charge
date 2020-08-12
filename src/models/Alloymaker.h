@@ -16,12 +16,12 @@ public:
     void setUnitWeight(double);
     double getWeight();
     void setWeight(double);
-    unsigned int getCount();
-    void setCount(unsigned int);
+    size_t getCount();
+    void setCount(size_t);
     double getPertPercentage();
     void setPertPercentage(double);
-    unsigned int getPrice();
-    void setPrice(unsigned int);
+    size_t getPrice();
+    void setPrice(size_t);
     string getName();
     void setName(string);
 
@@ -31,8 +31,8 @@ private:
     double pertPercentage;
     double unitWeight;
     double weight;
-    unsigned int count; // Count 0 means the quantity is continous
-    unsigned int price;
+    size_t count; // Count 0 means the quantity is continous
+    size_t price;
 };
 
 #endif /* ALLOYMAKER_H_ */

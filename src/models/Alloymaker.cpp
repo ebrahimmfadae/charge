@@ -49,12 +49,12 @@ void Alloymaker::setWeight(double value)
     weight = value;
 }
 
-unsigned int Alloymaker::getCount()
+size_t Alloymaker::getCount()
 {
     return count;
 }
 
-void Alloymaker::setCount(unsigned int value)
+void Alloymaker::setCount(size_t value)
 {
     count = value;
 }
@@ -69,12 +69,12 @@ void Alloymaker::setPertPercentage(double value)
     pertPercentage = value;
 }
 
-unsigned int Alloymaker::getPrice()
+size_t Alloymaker::getPrice()
 {
     return price;
 }
 
-void Alloymaker::setPrice(unsigned int value)
+void Alloymaker::setPrice(size_t value)
 {
     price = value;
 }
