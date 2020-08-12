@@ -1,3 +1,4 @@
+#include <sstream>
 #include "Composition.h"
 
 Composition::Composition() : Composition("Fe")
@@ -19,7 +20,9 @@ Chemical &Composition::get(size_t index)
 
 Chemical &Composition::get(string s)
 {
-    for (size_t i = 0; i < array->size(); i++)
+    auto size = array->size();
+
+    for (size_t i = 0; i < size; i++)
     {
         auto &cmp = array->at(i);
         if (cmp.getSymbol() == s)
@@ -27,7 +30,10 @@ Chemical &Composition::get(string s)
             return cmp;
         }
     }
-    return array->at(-1);
+
+    ostringstream stream;
+    stream << "item with (\"" << s << "\") symbol not found";
+    throw invalid_argument(stream.str());
 }
 
 string Composition::getBaseElement()
