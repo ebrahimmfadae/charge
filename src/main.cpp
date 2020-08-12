@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include "models/Alloymaker.h"
-#include "build-model/Variable.h"
+#include "optimizer/Variable.h"
 
 using namespace std;
 
