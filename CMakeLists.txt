@@ -6,7 +6,6 @@ set(SOURCES
     src/models/Alloymaker.cpp 
     src/models/Composition.cpp
     src/models/CompositionCollection.cpp
-    src/models/Uncountable.cpp
     src/models/Standard.cpp
     src/optimizer/Variable.cpp
 )

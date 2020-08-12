@@ -1,5 +1,4 @@
 #include "Alloymaker.h"
-#include "Uncountable.h"
 #include "CompositionCollection.h"
 
 using namespace std;
@@ -9,7 +8,9 @@ Alloymaker::Alloymaker()
     name = "";
     price = 0;
     pertPercentage = 0;
-    quantity = new Uncountable();
+    count = 0;
+    unitWeight = 0;
+    weight = 0;
     compositions = new CompositionCollection();
 }
 
@@ -28,14 +29,34 @@ CompositionCollection &Alloymaker::getCompositions()
     return *compositions;
 }
 
-Quantity &Alloymaker::getQuantity()
+double Alloymaker::getUnitWeight()
 {
-    return *quantity;
+    return unitWeight;
 }
 
-void Alloymaker::setQuantity(Quantity &value)
+void Alloymaker::setUnitWeight(double value)
 {
-    quantity = &value;
+    unitWeight = value;
+}
+
+double Alloymaker::getWeight()
+{
+    return count == 0 ? weight : getCount() * getUnitWeight();
+}
+
+void Alloymaker::setWeight(double value)
+{
+    weight = value;
+}
+
+unsigned int Alloymaker::getCount()
+{
+    return count;
+}
+
+void Alloymaker::setCount(unsigned int value)
+{
+    count = value;
 }
 
 double Alloymaker::getPertPercentage()
@@ -48,12 +69,12 @@ void Alloymaker::setPertPercentage(double value)
     pertPercentage = value;
 }
 
-int Alloymaker::getPrice()
+unsigned int Alloymaker::getPrice()
 {
     return price;
 }
 
-void Alloymaker::setPrice(int value)
+void Alloymaker::setPrice(unsigned int value)
 {
     price = value;
 }

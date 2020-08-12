@@ -38,10 +38,10 @@ double Variable::goal()
 
 double Variable::amount()
 {
-    return alloymaker->getQuantity().getWeight() * (1 - alloymaker->getPertPercentage() / 100);
+    return alloymaker->getWeight() * (1 - alloymaker->getPertPercentage() / 100);
 }
 
 double Variable::capacity()
 {
-    return alloymaker->getQuantity().getWeight();
+    return alloymaker->getWeight();
 }

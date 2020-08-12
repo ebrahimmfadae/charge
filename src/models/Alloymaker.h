@@ -3,7 +3,6 @@
 
 #include <string>
 #include "CompositionCollection.h"
-#include "Quantity.h"
 
 using namespace std;
 
@@ -13,12 +12,16 @@ class Alloymaker
 public:
     Alloymaker();
     CompositionCollection &getCompositions();
-    Quantity &getQuantity();
-    void setQuantity(Quantity &);
+    double getUnitWeight();
+    void setUnitWeight(double);
+    double getWeight();
+    void setWeight(double);
+    unsigned int getCount();
+    void setCount(unsigned int);
     double getPertPercentage();
     void setPertPercentage(double);
-    int getPrice();
-    void setPrice(int);
+    unsigned int getPrice();
+    void setPrice(unsigned int);
     string getName();
     void setName(string);
 
@@ -26,8 +29,10 @@ private:
     CompositionCollection *compositions;
     string name;
     double pertPercentage;
-    int price;
-    Quantity *quantity;
+    double unitWeight;
+    double weight;
+    unsigned int count; // Count 0 means the quantity is continous
+    unsigned int price;
 };
 
 #endif /* ALLOYMAKER_H_ */
