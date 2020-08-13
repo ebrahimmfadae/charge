@@ -45,3 +45,13 @@ double Variable::capacity()
 {
     return alloymaker->getWeight();
 }
+
+void Variable::setAnswer(double value)
+{
+    answer = value;
+}
+
+double Variable::getAnswer()
+{
+    return answer;
+}

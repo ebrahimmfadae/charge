@@ -15,9 +15,12 @@ public:
     double goal();
     double amount();
     double capacity();
+    void setAnswer(double value);
+    double getAnswer();
 
 private:
     Alloymaker *alloymaker;
+    double answer;
 };
 
 #endif /* VARIABLE_H_ */
