@@ -11,6 +11,7 @@ class Alloymaker
 
 public:
     Alloymaker();
+    void setCompositions(Composition&);
     Composition &getCompositions();
     double getUnitWeight();
     void setUnitWeight(double);

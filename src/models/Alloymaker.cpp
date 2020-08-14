@@ -1,3 +1,4 @@
+#include <stdexcept>
 #include "Alloymaker.h"
 #include "Composition.h"
 
@@ -11,6 +12,7 @@ Alloymaker::Alloymaker()
     count = 0;
     unitWeight = 0;
     weight = 0;
+    isQuantified = false;
     compositions = new Composition();
 }
 
@@ -27,6 +29,11 @@ void Alloymaker::setName(string value)
 Composition &Alloymaker::getCompositions()
 {
     return *compositions;
+}
+
+void Alloymaker::setCompositions(Composition& value)
+{
+    compositions = &value;
 }
 
 double Alloymaker::getUnitWeight()
@@ -47,21 +54,19 @@ double Alloymaker::getWeight()
 void Alloymaker::setWeight(double value)
 {
     if (getIsQuantified())
-        throw "You can't set weight for a quantified alloymaker";
+        throw runtime_error("can't set weight for a quantified alloymaker");
     weight = value;
 }
 
 size_t Alloymaker::getCount()
 {
-    if (!getIsQuantified())
-        return 0 / 0;
     return count;
 }
 
 void Alloymaker::setCount(size_t value)
 {
     if (!getIsQuantified())
-        throw "You can't set count for a not quantified alloymaker";
+        throw runtime_error("can't set count for a not quantified alloymaker");
     count = value;
 }
 

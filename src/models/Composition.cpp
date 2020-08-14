@@ -10,7 +10,9 @@ Composition::Composition(string baseElement) : baseElement(baseElement)
     array = new vector<Chemical>{
         Chemical("Fe", 100, *this),
         Chemical("C", 0, *this),
-        Chemical("Si", 0, *this)};
+        Chemical("Si", 0, *this),
+        Chemical("Mn", 0, *this),
+        Chemical("Mg", 0, *this)};
 }
 
 Chemical &Composition::get(size_t index)

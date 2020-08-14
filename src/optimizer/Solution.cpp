@@ -1,4 +1,4 @@
-#ifndef ERROR()
+#ifndef ERROR
 #define ERROR()                     \
     {                               \
         fprintf(stderr, "Error\n"); \
@@ -6,6 +6,7 @@
     }
 #endif
 
+#include <iostream>
 #include "Solution.h"
 #include "lpsolve/lp_lib.h"
 
@@ -39,22 +40,19 @@ void Solution::setStandards(vector<Standard> &value)
 
 void Solution::autoSolve(vector<Variable> &variables, double amount)
 {
-
     lprec *lp;
     size_t rows = 0;
     const size_t columns = variables.size();
-
     if ((lp = make_lp(rows, columns)) == NULL)
     {
         ERROR();
     }
 
-    set_maxim(lp);
     {
-        double row[columns];
+        double row[columns + 1];
         for (size_t i = 0; i < columns; i++)
         {
-            row[i] = variables[i].goal();
+            row[i + 1] = variables[i].goal();
         }
         if (!set_obj_fn(lp, row))
         {
@@ -63,10 +61,10 @@ void Solution::autoSolve(vector<Variable> &variables, double amount)
     }
 
     {
-        double row[columns];
+        double row[columns + 1];
         for (size_t i = 0; i < columns; i++)
         {
-            row[i] = variables[i].amount();
+            row[i + 1] = variables[i].amount();
         }
         if (!add_constraint(lp, row, EQ, amount))
         {
@@ -79,10 +77,10 @@ void Solution::autoSolve(vector<Variable> &variables, double amount)
     }
 
     {
-        double row[columns];
+        double row[columns + 1];
         for (size_t i = 0; i < columns; i++)
         {
-            row[i] = variables[i].capacity();
+            row[i + 1] = variables[i].capacity();
         }
         if (!add_constraint(lp, row, LE, capacity))
         {
@@ -96,18 +94,22 @@ void Solution::autoSolve(vector<Variable> &variables, double amount)
 
     for (size_t i = 0; i < standards.size(); i++)
     {
-        double row[columns];
-        for (size_t i = 0; i < columns; i++)
+        auto &std = standards[i];
+        double row[columns + 1];
+        for (size_t j = 0; j < columns; j++)
         {
-            row[i] = variables[i].composition(standards[i]);
+            row[j + 1] = variables[j].composition(std) / amount;
         }
-        const double max = standards[i].getMax();
-        const double rh = standards[i].getMin() - max;
-        if (!add_constraint(lp, row, LE, standards[i].getMax()))
+        const double rh = std.getMin() - std.getMax();
+        if (!add_constraint(lp, row, LE, std.getMax()))
         {
             ERROR();
+        } 
+        else
+        {
+            rows++;
         }
-        if (!set_rh(lp, rows, rh))
+        if (!set_rh_range(lp, rows, rh))
         {
             ERROR();
         }
@@ -115,7 +117,7 @@ void Solution::autoSolve(vector<Variable> &variables, double amount)
 
     for (size_t i = 0; i < columns; i++)
     {
-        if (variables[i].isInteger() && !set_int(lp, i, TRUE))
+        if (variables[i].isInteger() && !set_int(lp, i + 1, TRUE))
         {
             ERROR();
         }
@@ -132,7 +134,7 @@ void Solution::autoSolve(vector<Variable> &variables, double amount)
     print_objective(lp);
     print_solution(lp, 1);
     print_constraints(lp, 1);
-    write_lp(lp, "solution.lp");
+    // write_lp(lp, "solution.lp");
 
     delete_lp(lp);
 }

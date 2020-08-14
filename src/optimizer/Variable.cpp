@@ -28,7 +28,7 @@ double Variable::composition(Standard &std)
         sum += cmp.getPercentage();
     }
 
-    return sum;
+    return sum * amount();
 }
 
 double Variable::goal()
@@ -38,12 +38,12 @@ double Variable::goal()
 
 double Variable::amount()
 {
-    return alloymaker->getWeight() * (1 - alloymaker->getPertPercentage() / 100);
+    return 1 - alloymaker->getPertPercentage() / 100;
 }
 
 double Variable::capacity()
 {
-    return alloymaker->getWeight();
+    return 1;
 }
 
 bool Variable::isInteger()
