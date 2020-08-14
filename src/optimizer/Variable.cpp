@@ -46,6 +46,11 @@ double Variable::capacity()
     return alloymaker->getWeight();
 }
 
+bool Variable::isInteger()
+{
+    return alloymaker->getIsQuantified();
+}
+
 void Variable::setAnswer(double value)
 {
     answer = value;

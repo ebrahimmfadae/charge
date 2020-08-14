@@ -9,9 +9,17 @@ class Solution
 {
 
 public:
-    void solve(vector<Variable &>, vector<Standard &>);
+    Solution();
+    Solution(double);
+    void setCapacity(double);
+    double getCapacity();
+    vector<Standard> &getStandards();
+    void setStandards(vector<Standard> &);
+    void autoSolve(vector<Variable> &, double);
 
 private:
+    double capacity;
+    vector<Standard> standards;
 };
 
 #endif /* SOLUTION_H_ */

@@ -15,6 +15,7 @@ public:
     double goal();
     double amount();
     double capacity();
+    bool isInteger();
     void setAnswer(double value);
     double getAnswer();
 

@@ -41,22 +41,38 @@ void Alloymaker::setUnitWeight(double value)
 
 double Alloymaker::getWeight()
 {
-    return count == 0 ? weight : getCount() * getUnitWeight();
+    return getIsQuantified() ? weight : getCount() * getUnitWeight();
 }
 
 void Alloymaker::setWeight(double value)
 {
+    if (getIsQuantified())
+        throw "You can't set weight for a quantified alloymaker";
     weight = value;
 }
 
 size_t Alloymaker::getCount()
 {
+    if (!getIsQuantified())
+        return 0 / 0;
     return count;
 }
 
 void Alloymaker::setCount(size_t value)
 {
+    if (!getIsQuantified())
+        throw "You can't set count for a not quantified alloymaker";
     count = value;
+}
+
+void Alloymaker::setIsQuantified(bool value)
+{
+    isQuantified = value;
+}
+
+bool Alloymaker::getIsQuantified()
+{
+    return isQuantified;
 }
 
 double Alloymaker::getPertPercentage()

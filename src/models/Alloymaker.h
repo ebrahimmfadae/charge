@@ -18,6 +18,8 @@ public:
     void setWeight(double);
     size_t getCount();
     void setCount(size_t);
+    void setIsQuantified(bool);
+    bool getIsQuantified();
     double getPertPercentage();
     void setPertPercentage(double);
     size_t getPrice();
@@ -31,7 +33,8 @@ private:
     double pertPercentage;
     double unitWeight;
     double weight;
-    size_t count; // Count 0 means the quantity is continous
+    size_t count;
+    bool isQuantified;
     size_t price;
 };
 
