@@ -35,9 +35,12 @@ int main()
     auto v2 = new Variable(a2);
     auto v3 = new Variable(a3);
     auto s = new Solution(5000);
-    auto vs = new vector<Variable>{*v1,*v2,*v3};
+    auto vs = new vector<Variable>{*v1, *v2, *v3};
     auto stds = vector<Standard>{std1};
     s->setStandards(stds);
     s->autoSolve(*vs, 500);
+    cout << vs->at(0).getAnswer() << endl
+         << vs->at(1).getAnswer() << endl
+         << vs->at(2).getAnswer() << endl;
     return 0;
 }

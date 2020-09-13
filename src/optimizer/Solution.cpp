@@ -131,11 +131,21 @@ void Solution::autoSolve(vector<Variable> &variables, double amount)
         set_upbo(lp, i + 1, variables[i].upperBound());
     }
 
+    set_verbose(lp, CRITICAL);
     solve(lp);
 
-    print_objective(lp);
-    print_solution(lp, 1);
-    print_constraints(lp, 1);
+    double result[variables.size()];
+    get_variables(lp, result);
+
+    for (size_t i = 0; i < variables.size(); i++)
+    {
+        variables.at(i).setAnswer(result[i]);
+    }
+
+    // print_objective(lp);
+    // print_solution(lp, 1);
+    // print_constraints(lp, 1);
+
     write_lp(lp, "solution.lp");
 
     delete_lp(lp);
