@@ -8,11 +8,13 @@ Alloymaker::Alloymaker()
 {
     name = "";
     price = 0;
-    pertPercentage = 0;
+    lossPercentage = 0;
     count = 0;
     unitWeight = 0;
     weight = 0;
     isQuantified = false;
+    lowerBound = 0;
+    upperBound = 0;
     compositions = new Composition();
 }
 
@@ -31,7 +33,7 @@ Composition &Alloymaker::getCompositions()
     return *compositions;
 }
 
-void Alloymaker::setCompositions(Composition& value)
+void Alloymaker::setCompositions(Composition &value)
 {
     compositions = &value;
 }
@@ -80,14 +82,34 @@ bool Alloymaker::getIsQuantified()
     return isQuantified;
 }
 
-double Alloymaker::getPertPercentage()
+double Alloymaker::getLossPercentage()
 {
-    return pertPercentage;
+    return lossPercentage;
 }
 
-void Alloymaker::setPertPercentage(double value)
+void Alloymaker::setLossPercentage(double value)
 {
-    pertPercentage = value;
+    lossPercentage = value;
+}
+
+double Alloymaker::getLowerBound()
+{
+    return lowerBound;
+}
+
+void Alloymaker::setLowerBound(double value)
+{
+    lowerBound = value;
+}
+
+double Alloymaker::getUpperBound()
+{
+    return upperBound;
+}
+
+void Alloymaker::setUpperBound(double value)
+{
+    upperBound = value;
 }
 
 size_t Alloymaker::getPrice()

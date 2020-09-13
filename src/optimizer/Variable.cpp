@@ -38,7 +38,7 @@ double Variable::goal()
 
 double Variable::amount()
 {
-    return 1 - alloymaker->getPertPercentage() / 100;
+    return 1 - alloymaker->getLossPercentage() / 100;
 }
 
 double Variable::capacity()

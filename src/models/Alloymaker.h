@@ -11,7 +11,7 @@ class Alloymaker
 
 public:
     Alloymaker();
-    void setCompositions(Composition&);
+    void setCompositions(Composition &);
     Composition &getCompositions();
     double getUnitWeight();
     void setUnitWeight(double);
@@ -21,8 +21,12 @@ public:
     void setCount(size_t);
     void setIsQuantified(bool);
     bool getIsQuantified();
-    double getPertPercentage();
-    void setPertPercentage(double);
+    double getLossPercentage();
+    void setLossPercentage(double);
+    double getLowerBound();
+    void setLowerBound(double);
+    double getUpperBound();
+    void setUpperBound(double);
     size_t getPrice();
     void setPrice(size_t);
     string getName();
@@ -31,7 +35,9 @@ public:
 private:
     Composition *compositions;
     string name;
-    double pertPercentage;
+    double lossPercentage;
+    double lowerBound;
+    double upperBound;
     double unitWeight;
     double weight;
     size_t count;
