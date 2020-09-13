@@ -1,5 +1,7 @@
 #include "Standard.h"
 
+using namespace std;
+
 Standard::Standard()
 {
     min = 0;

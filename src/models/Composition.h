@@ -5,8 +5,6 @@
 #include <vector>
 #include "Chemical.h"
 
-using namespace std;
-
 class Chemical;
 class Composition;
 
@@ -15,16 +13,16 @@ class Composition
 
 public:
     Composition();
-    Composition(string);
+    Composition(std::string);
     Chemical &get(size_t);
-    Chemical &get(string);
-    string getBaseElement();
-    void setBaseElement(string);
+    Chemical &get(std::string);
+    std::string getBaseElement();
+    void setBaseElement(std::string);
     size_t size();
 
 private:
-    string baseElement;
-    vector<Chemical> *array;
+    std::string baseElement;
+    std::vector<Chemical> *array;
 };
 
 #endif /* COMPOSITION_H_ */

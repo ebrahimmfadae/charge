@@ -10,6 +10,8 @@
 #include "Solution.h"
 #include "lpsolve/lp_lib.h"
 
+using namespace std;
+
 Solution::Solution() : Solution(0) {}
 
 Solution::Solution(double capacity)

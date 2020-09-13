@@ -13,13 +13,13 @@ public:
     Solution(double);
     void setCapacity(double);
     double getCapacity();
-    vector<Standard> &getStandards();
-    void setStandards(vector<Standard> &);
-    void autoSolve(vector<Variable> &, double);
+    std::vector<Standard> &getStandards();
+    void setStandards(std::vector<Standard> &);
+    void autoSolve(std::vector<Variable> &, double);
 
 private:
     double capacity;
-    vector<Standard> standards;
+    std::vector<Standard> standards;
 };
 
 #endif /* SOLUTION_H_ */

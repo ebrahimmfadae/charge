@@ -3,6 +3,8 @@
 #include <iostream>
 #include "Chemical.h"
 
+using namespace std;
+
 Chemical::Chemical(Composition &compositions) : Chemical("", 0, compositions)
 {
 }

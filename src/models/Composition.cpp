@@ -1,6 +1,8 @@
 #include <sstream>
 #include "Composition.h"
 
+using namespace std;
+
 Composition::Composition() : Composition("Fe")
 {
 }

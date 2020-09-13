@@ -4,8 +4,6 @@
 #include <string>
 #include "Composition.h"
 
-using namespace std;
-
 class Chemical;
 class Composition;
 
@@ -14,16 +12,16 @@ class Chemical
 
 public:
     Chemical(Composition &);
-    Chemical(string, double, Composition &);
+    Chemical(std::string, double, Composition &);
     double getPercentage();
     void setPercentage(double);
-    string getSymbol();
-    void setSymbol(string);
-    string toString();
+    std::string getSymbol();
+    void setSymbol(std::string);
+    std::string toString();
 
 private:
     Composition *compositions;
-    string symbol;
+    std::string symbol;
     double percentage;
 };
 

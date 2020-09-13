@@ -4,8 +4,6 @@
 #include <string>
 #include "Composition.h"
 
-using namespace std;
-
 class Alloymaker
 {
 
@@ -29,12 +27,12 @@ public:
     void setUpperBound(double);
     size_t getPrice();
     void setPrice(size_t);
-    string getName();
-    void setName(string);
+    std::string getName();
+    void setName(std::string);
 
 private:
     Composition *compositions;
-    string name;
+    std::string name;
     double lossPercentage;
     double lowerBound;
     double upperBound;

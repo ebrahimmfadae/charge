@@ -4,8 +4,6 @@
 #include <string>
 #include <vector>
 
-using namespace std;
-
 class Standard
 {
 
@@ -15,11 +13,11 @@ public:
     void setMin(double);
     double getMax();
     void setMax(double);
-    vector<string> &getSymbols();
-    void setSymbols(vector<string>);
+    std::vector<std::string> &getSymbols();
+    void setSymbols(std::vector<std::string>);
 
 private:
-    vector<string> symbols;
+    std::vector<std::string> symbols;
     double min;
     double max;
 };

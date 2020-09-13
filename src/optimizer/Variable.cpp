@@ -1,5 +1,7 @@
 #include "Variable.h"
 
+using namespace std;
+
 Variable::Variable(Alloymaker &alloymaker)
 {
     setAlloymaker(alloymaker);
