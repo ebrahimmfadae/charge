@@ -1,4 +1,5 @@
 #include <stdexcept>
+#include <math.h>
 #include "Alloymaker.h"
 #include "Composition.h"
 
@@ -14,7 +15,7 @@ Alloymaker::Alloymaker()
     weight = 0;
     isQuantified = false;
     lowerBound = 0;
-    upperBound = 0;
+    upperBound = INFINITY;
     compositions = new Composition();
 }
 

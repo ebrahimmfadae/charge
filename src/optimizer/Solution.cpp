@@ -106,7 +106,7 @@ void Solution::autoSolve(vector<Variable> &variables, double amount)
         if (!add_constraint(lp, row, LE, std.getMax()))
         {
             ERROR();
-        } 
+        }
         else
         {
             rows++;
@@ -127,8 +127,8 @@ void Solution::autoSolve(vector<Variable> &variables, double amount)
 
     for (size_t i = 0; i < columns; i++)
     {
-        // set_lowbo(lp, 2, 2);
-        // set_upbo(lp, 4, 5.3);
+        set_lowbo(lp, i + 1, variables[i].lowerBound());
+        set_upbo(lp, i + 1, variables[i].upperBound());
     }
 
     solve(lp);
@@ -136,7 +136,7 @@ void Solution::autoSolve(vector<Variable> &variables, double amount)
     print_objective(lp);
     print_solution(lp, 1);
     print_constraints(lp, 1);
-    // write_lp(lp, "solution.lp");
+    write_lp(lp, "solution.lp");
 
     delete_lp(lp);
 }

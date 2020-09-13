@@ -48,6 +48,16 @@ double Variable::capacity()
     return 1;
 }
 
+double Variable::lowerBound()
+{
+    return alloymaker->getLowerBound();
+}
+
+double Variable::upperBound()
+{
+    return alloymaker->getUpperBound();
+}
+
 bool Variable::isInteger()
 {
     return alloymaker->getIsQuantified();
