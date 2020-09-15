@@ -1,8 +1,8 @@
 #ifndef VARIABLE_H_
 #define VARIABLE_H_
 
-#include "models/Alloymaker.h"
-#include "models/Standard.h"
+#include "../models/Alloymaker.h"
+#include "../models/Standard.h"
 
 class Variable
 {

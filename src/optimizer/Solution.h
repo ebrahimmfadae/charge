@@ -2,8 +2,8 @@
 #define SOLUTION_H_
 
 #include <vector>
-#include "optimizer/Variable.h"
-#include "models/Standard.h"
+#include "Variable.h"
+#include "../models/Standard.h"
 
 class Solution
 {
