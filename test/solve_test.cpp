@@ -1,7 +1,44 @@
-#define BOOST_TEST_MODULE Simple testcases
-#include <boost/test/unit_test.hpp>
+#define BOOST_TEST_MODULE Simple
+#include <boost/test/included/unit_test.hpp>
+#include "../src/optimizer/Variable.h"
+#include "../src/optimizer/Solution.h"
+#include "../src/models/Alloymaker.h"
+#include "../src/models/Standard.h"
+
+using namespace std;
 
 BOOST_AUTO_TEST_CASE(solve_test)
 {
-    BOOST_CHECK_EQUAL(2 + 2, 4);
+    Alloymaker a1;
+    a1.setPrice(15633);
+    a1.setLossPercentage(5);
+    a1.getCompositions().get("C").setPercentage(0.2);
+    a1.getCompositions().get("Si").setPercentage(0.6);
+    Alloymaker a2;
+    a2.setPrice(23134);
+    a2.setLossPercentage(12);
+    a2.getCompositions().get("C").setPercentage(90);
+    Alloymaker a3;
+    a3.setPrice(5665);
+    a3.setLossPercentage(2);
+    a3.getCompositions().get("Si").setPercentage(1.6);
+    auto std1 = Standard();
+    std1.setSymbols(vector<string>{"C"});
+    std1.setMax(0.6);
+    std1.setMin(0.4);
+    auto std2 = Standard();
+    std2.setSymbols(vector<string>{"Si"});
+    std2.setMax(1.2);
+    std2.setMin(1);
+    auto v1 = new Variable(a1);
+    auto v2 = new Variable(a2);
+    auto v3 = new Variable(a3);
+    auto s = new Solution(5000);
+    auto vs = new vector<Variable>{*v1, *v2, *v3};
+    auto stds = vector<Standard>{std1};
+    s->setStandards(stds);
+    s->autoSolve(*vs, 500);
+    BOOST_CHECK_EQUAL(vs->at(0).getAnswer(), 0);
+    BOOST_CHECK_EQUAL(vs->at(1).getAnswer(), 2.52525);
+    BOOST_CHECK_EQUAL(vs->at(2).getAnswer(), 507.937);
 }
