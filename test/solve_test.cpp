@@ -1,9 +1,10 @@
 #define BOOST_TEST_MODULE Simple
 #include <boost/test/included/unit_test.hpp>
-#include "../src/optimizer/Variable.h"
-#include "../src/optimizer/Solution.h"
+#include <math.h>
 #include "../src/models/Alloymaker.h"
 #include "../src/models/Standard.h"
+#include "../src/optimizer/Variable.h"
+#include "../src/optimizer/Solution.h"
 
 using namespace std;
 
@@ -38,7 +39,13 @@ BOOST_AUTO_TEST_CASE(solve_test)
     auto stds = vector<Standard>{std1};
     s->setStandards(stds);
     s->autoSolve(*vs, 500);
-    BOOST_CHECK_EQUAL(vs->at(0).getAnswer(), 0);
-    BOOST_CHECK_EQUAL(vs->at(1).getAnswer(), 2.52525);
-    BOOST_CHECK_EQUAL(vs->at(2).getAnswer(), 507.937);
+    ostringstream st;
+    st << vs->at(0).getAnswer();
+    BOOST_CHECK_EQUAL(st.str(), "0");
+    st.str("");
+    st << vs->at(1).getAnswer();
+    BOOST_CHECK_EQUAL(st.str(), "2.52525");
+    st.str("");
+    st << vs->at(2).getAnswer();
+    BOOST_CHECK_EQUAL(st.str(), "507.937");
 }
