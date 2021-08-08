@@ -1,6 +1,5 @@
 #define BOOST_TEST_MODULE Simple
 #include <boost/test/included/unit_test.hpp>
-#include <math.h>
 #include "../src/models/Alloymaker.h"
 #include "../src/models/Standard.h"
 #include "../src/optimizer/Variable.h"
