@@ -49,5 +49,9 @@
         "typeinfo": "cpp",
         "chrono": "cpp",
         "complex": "cpp"
-    }
+    },
+    "cSpell.words": [
+        "CFLAGS",
+        "GTKMM"
+    ]
 }
