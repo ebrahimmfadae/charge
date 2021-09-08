@@ -11,5 +11,3 @@ target_link_libraries(app PRIVATE ${GTK_LIBRARIES})
 
 # Add other flags to the compiler
 add_definitions(${GTK_CFLAGS_OTHER})
-
-# configure_file("app.glade" "app.glade" COPYONLY)

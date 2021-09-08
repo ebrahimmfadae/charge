@@ -1,25 +1,25 @@
 #include <gtk/gtk.h>
 
-static void activate(GtkApplication *app,
-                     gpointer user_data)
-{
-   GtkWidget *window;
-
-   window = gtk_application_window_new(app);
-   gtk_window_set_title(GTK_WINDOW(window), "Hello GNOME");
-   gtk_widget_show_all(window);
-}
-
 int main(int argc, char **argv)
 {
-   GtkApplication *app;
-   int status;
+   GtkWidget *window;
+   GtkBuilder *builder = NULL;
 
-   app = gtk_application_new("org.gtk.example",
-                             G_APPLICATION_FLAGS_NONE);
-   g_signal_connect(app, "activate",
-                    G_CALLBACK(activate), NULL);
-   status = g_application_run(G_APPLICATION(app), argc, argv);
-   g_object_unref(app);
-   return (status);
+   gtk_init(&argc, &argv);
+
+   builder = gtk_builder_new();
+
+   if (gtk_builder_add_from_file(builder, "views/app.glade", NULL) == 0)
+   {
+      printf("gtk_builder_add_from_file FAILED\n");
+      return 0;
+   }
+
+   window = GTK_WIDGET(gtk_builder_get_object(builder, "app"));
+
+   gtk_builder_connect_signals(builder, NULL);
+
+   gtk_widget_show_all(window);
+   gtk_main();
+   return 0;
 }
