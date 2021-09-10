@@ -4,7 +4,7 @@
 int initDb(sqlite3 *db)
 {
     char *sql = "CREATE TABLE COMPANY("
-                "ID INT PRIMARY KEY  NOT NULL);";
+                "ID INT PRIMARY KEY NOT NULL);";
     return sqlite3_exec(db, sql, NULL, NULL, NULL);
 }
 

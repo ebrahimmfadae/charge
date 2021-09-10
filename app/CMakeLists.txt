@@ -1,5 +1,3 @@
-cmake_minimum_required(VERSION 3.13)
-
 add_executable(app main.cpp)
 
 # Use the package PkgConfig to detect GTK+ headers/library files
