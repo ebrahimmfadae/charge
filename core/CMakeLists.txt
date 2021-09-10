@@ -1,5 +1,5 @@
 # Find Lpsolve
-set(LPSOLVE_DIR ${CMAKE_SOURCE_DIR}/optimizer/libs/lpsolve)
+set(LPSOLVE_DIR ${CMAKE_SOURCE_DIR}/core/libs/lpsolve)
 add_library(lpsolve SHARED IMPORTED)
 set_target_properties(lpsolve PROPERTIES
     IMPORTED_LOCATION ${LPSOLVE_DIR}/liblpsolve55.so
@@ -15,6 +15,6 @@ set(SOURCES
     solver/Variable.cpp
     solver/Solution.cpp
 )
-add_library(optimizer STATIC ${SOURCES})
-target_include_directories(optimizer PRIVATE ${CMAKE_SOURCE_DIR}/optimizer/libs)
-target_link_libraries(optimizer PRIVATE lpsolve)
+add_library(core STATIC ${SOURCES})
+target_include_directories(core PRIVATE ${CMAKE_SOURCE_DIR}/core/libs)
+target_link_libraries(core PRIVATE lpsolve)

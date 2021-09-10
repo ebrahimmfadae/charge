@@ -4,5 +4,5 @@ project(CHARGE)
 
 # Define modules
 add_subdirectory(app)
-add_subdirectory(optimizer)
+add_subdirectory(core)
 add_subdirectory(test)
