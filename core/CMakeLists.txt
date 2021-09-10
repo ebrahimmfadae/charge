@@ -12,8 +12,8 @@ set(SOURCES
     models/Chemical.cpp
     models/Composition.cpp
     models/Standard.cpp
-    solver/Variable.cpp
-    solver/Solution.cpp
+    optimization/Variable.cpp
+    optimization/Solution.cpp
 )
 add_library(core STATIC ${SOURCES})
 target_include_directories(core PRIVATE ${CMAKE_SOURCE_DIR}/core/libs)

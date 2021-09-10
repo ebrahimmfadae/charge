@@ -2,8 +2,8 @@
 #include <boost/test/included/unit_test.hpp>
 #include "../optimizer/models/Alloymaker.h"
 #include "../optimizer/models/Standard.h"
-#include "../optimizer/solver/Variable.h"
-#include "../optimizer/solver/Solution.h"
+#include "../optimizer/optimization/Variable.h"
+#include "../optimizer/optimization/Solution.h"
 
 using namespace std;
 
