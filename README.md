@@ -21,6 +21,8 @@ cd build/test
 
 The app is written with gtk and glade. None of the UI elements are implemented.
 
+In order to run the app you must copy app/views content to build/app/views.
+
 ```
 cd build/app
 ./app
