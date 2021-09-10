@@ -1,9 +1,9 @@
 #define BOOST_TEST_MODULE Simple
 #include <boost/test/included/unit_test.hpp>
-#include "../optimizer/models/Alloymaker.h"
-#include "../optimizer/models/Standard.h"
-#include "../optimizer/optimization/Variable.h"
-#include "../optimizer/optimization/Solution.h"
+#include "../core/models/Alloymaker.h"
+#include "../core/models/Standard.h"
+#include "../core/optimization/Variable.h"
+#include "../core/optimization/Solution.h"
 
 using namespace std;
 
